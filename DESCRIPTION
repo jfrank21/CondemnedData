@@ -1,16 +1,17 @@
 Package: CondemnedData
-Title: What the Package Does (One Line, Title Case)
+Title: Condemned Prisoners on Death Row
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Jacob",
+           family = "Frank",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "jfrank21@amherst.edu",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+Description: This package will look at the different circumstances regarding inmates on death row.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
