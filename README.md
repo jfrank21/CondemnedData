@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+![R-CMD-check](https://github.com/jfrank21/CondemnedData/workflows/R-CMD-check/badge.svg)
 <!-- badges: end -->
 
 The goal of CondemnedData is to …
