@@ -8,7 +8,13 @@
 ![R-CMD-check](https://github.com/jfrank21/CondemnedData/workflows/R-CMD-check/badge.svg)
 <!-- badges: end -->
 
-The goal of CondemnedData is to …
+The goal of CondemnedData is to determine the different types of
+prisoners on death row. Specifically, the goal of this dataset is to
+identify prisoners who were on death row, who moved off of death row and
+examine the specifics of their particular sentence. This package adds
+better naming to the variables and isolates the year or birth for each
+prisoner as a new column in the dataset. It also selects a subset of the
+10 most descriptive predictors from the original larger dataset.
 
 ## Installation
 
@@ -28,33 +34,30 @@ devtools::install_github("jfrank21/CondemnedData")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is an example of the type of analysis that can be conducted using
+this dataset. The plot below shows a comparison of the number of
+prisoners in each state, separated by race.
 
 ``` r
-library(CondemnedData)
-## basic example code
+modified_Death_Row <-
+  filter(Death_Row, race == "Black" | race == "White" | race == "Hispanic or Latino")
+ggplot(
+  modified_Death_Row,
+  aes(x = state, fill = state)
+) +
+  geom_bar() +
+  facet_wrap(~race) +
+  labs(x = "Race", y = "Number of prisoners", 
+       title = "Prisoners in each state separated by race") +
+  theme(
+    axis.text.x = element_text(angle = 90, size = 5),
+    legend.position = "none"
+  )
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+<img src="man/figures/README-example-1.png" width="100%" />
 
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub\!
+Looking at the graph it seems that most states have a high number of
+white prisoners, however most states have a similar number of black
+prisoners if not more. The states with the most prisoners are Florida,
+Texas and California.
