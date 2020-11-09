@@ -1,4 +1,4 @@
-## code to prepare `DATASET` dataset goes here
+## code to prepare `Death_Row` dataset goes here
 library(tidyverse)
 Death_Row <- readr::read_csv("the-condemed-data.csv") %>%
   rename(
@@ -12,6 +12,5 @@ Death_Row <- readr::read_csv("the-condemed-data.csv") %>%
   mutate(birthyear = str_sub(DOB, -4, -1),
          age = as.numeric(sentencing_year) - as.numeric(birthyear))
 glimpse(Death_Row)
-temp <- str_sub(Death_Row$DOB, -4, -1)
 
 usethis::use_data(Death_Row, overwrite = TRUE)

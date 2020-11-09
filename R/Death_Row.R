@@ -26,5 +26,11 @@ NULL
 #'   \item{currently_on_death_row}{Whether or not prisoner is on death row}
 #'   \item{executed}{Whether or not prisoner has been executed}
 #'   \item{current_sentence}{Types of Sentences}
+#'   \item{DR}{Death Row}
+#'   \item{LWOP}{Life Without Parole}
+#'   \item{LPP}{Life With Possibility of Parole}
+#'   \item{Y}{Term of Years}
+#'   \item{M}{Term of Months}
+#'   \item{Time}{Time Served}
 #' }
 "Death_Row"
